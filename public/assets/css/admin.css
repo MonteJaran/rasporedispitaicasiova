@@ -1,0 +1,303 @@
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: rgba(17, 24, 39, 0.7); /* glass effect */
+    backdrop-filter: blur(10px);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+header h1 {
+    color: var(--text);
+    font-size: 28px;
+    margin: 0;
+}
+
+header nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+header nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+header nav a:hover {
+    color: var(--accent);
+}
+
+
+main {
+    padding: 30px 60px;
+}
+
+/* Panel title */
+h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: var(--text);
+}
+
+
+.action-button {
+    padding: 10px 18px;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.add-button {
+    background: var(--accent);
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.edit-button {
+    margin: 0;
+    background: var(--muted);
+    color: white;
+}
+
+.delete-button {
+    background: var(--danger);
+    color: white;
+}
+/*todo*/
+.activation-button {
+    background: var(--access);
+    color: white;
+}
+
+
+/* Hover state */
+.action-button:hover {
+    filter: brightness(1.1);
+}
+
+
+.form-container {
+    width: 450px;
+}
+
+.form-container h3 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    background: #1f2937;
+    border: 1px solid #334155;
+    color: var(--text);
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+/* keep checkboxes and radios their natural size (do not stretch) */
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+    margin-bottom: 0;
+    transform: none;
+}
+
+/* modal dialog specific styles (editor modal) */
+.aem-dialog label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.aem-dialog input[type="text"],
+.aem-dialog input[type="number"],
+.aem-dialog select,
+.aem-dialog textarea {
+    width: 100%;
+}
+
+/* modal dialog specific layout fixes */
+.aem-dialog form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* ensure modal dialog content is left-aligned */
+.aem-dialog {
+    text-align: left;
+}
+
+/* make checkbox-row full width and left aligned inside modal */
+.aem-dialog .checkbox-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin: 6px 0 12px 0;
+}
+
+/* ensure checkbox row has no auto margins and inputs inside it don't center */
+.aem-dialog .checkbox-row input[type="checkbox"] {
+    margin-left: 0;
+}
+
+/* make number inputs compact inside modal */
+.aem-dialog input[type="number"] {
+    width: 120px;
+}
+
+/* ensure checkbox-only row stays left */
+.aem-dialog .checkbox-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+form button[type="submit"] {
+    background: var(--correct);
+    padding: 12px;
+    width: 100%;
+    border-radius: var(--radius);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+form button[type="submit"]:hover {
+    filter: brightness(1.1);
+}
+#save-pdf, #generate-schedule{
+    background: var(--correct);
+    padding: 12px;
+    width: 100%;
+    border-radius: var(--radius);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+#save-pdf:hover, #generate-schedule:hover{
+    filter: brightness(1.1);
+}
+
+#generate-schedule:disabled,
+#generate-schedule.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+    background: #6b7280;
+}
+
+#generate-schedule.loading {
+    position: relative;
+}
+
+#generate-schedule.loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    margin: auto;
+    border: 2px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+td.no-drag { cursor: default; }
+.td-swap-hl { outline: 2px dashed #3b82f6; }
+
+
+@keyframes spin {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
+}
+th, td {
+    padding: 14px;
+    border-bottom: 1px solid #334155;
+    text-align: left;
+}
+
+th {
+    background: rgba(17, 24, 39, 0.8);
+    color: var(--muted);
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 10px 12px;
+    line-height: 1.2;
+    vertical-align: middle;
+}
+
+.schedule-table td {
+    white-space: pre-line;
+    height: 72px;
+}
+
+
+.success, .error {
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    font-size: 14px;
+    box-shadow: var(--shadow);
+    max-width: 450px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.success {
+    background: var(--accent);
+    /* ensure readable contrast */
+    color: #ffffff;
+}
+
+.error {
+    background: var(--danger);
+    /* ensure readable contrast */
+    color: #ffffff;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--muted);
+    margin-top: 40px;
+}

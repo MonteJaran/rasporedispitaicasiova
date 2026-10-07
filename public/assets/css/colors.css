@@ -1,0 +1,13 @@
+:root{
+    --bg: #0f172a;         /* slate-900 */
+    --panel: #111827;      /* gray-900 */
+    --muted: #94a3b8;      /* slate-400 */
+    --text: #e4e7ed;       /* gray-200 */
+    --accent: #3b82f6;     /* blue-500 */
+    --danger: rgba(239, 68, 134, 0.66);     /* red-500 */
+    --access: rgba(9, 97, 9, 0.82);
+    --focus-ring: 0 0 0 4px rgba(59,130,246,.25);
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(0,0,0,.35);
+    --correct: rgba(34, 197, 94, .35);
+}

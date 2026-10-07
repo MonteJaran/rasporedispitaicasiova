@@ -1,0 +1,149 @@
+
+/* Styles extracted from public/views/index.php */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f4ff;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* HERO SECTION */
+.hero {
+    /* Убрана фиксированная высота 100vh, заменена на адаптивную */
+    min-height: 60vh;
+    background: linear-gradient(rgba(0, 30, 80, 0.7), rgba(0, 30, 80, 0.8)), url('../../img/banner.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 56px 20px; /* добавлены внутренние отступы, чтобы содержимое не вылезало */
+    box-sizing: border-box;
+    position: relative;
+}
+
+.hero h1 {
+    /* адаптивный размер заголовка */
+    font-size: clamp(28px, 6vw, 58px);
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* Logo inside hero */
+#hero-logo {
+    display: block;
+    margin: 0 auto 20px;
+    /* адаптивная ширина: не меньше 100px, не больше 420px */
+    width: clamp(100px, 35vw, 420px);
+    height: auto;
+    z-index: 2; /* логотип поверх фонового изображения, но в потоке */
+}
+
+.hero p {
+    font-size: clamp(16px, 2.8vw, 22px);
+    max-width: 700px;
+    margin-top: 16px;
+}
+
+.hero-btns {
+    margin-top: 26px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap; /* разрешаем перенос кнопок при узком экране */
+    justify-content: center;
+    z-index: 2;
+}
+
+.btn {
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: 0.25s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: 140px; /* предотвращаем слишком узкие кнопки */
+}
+
+.btn-blue {
+    background: #3b7bff;
+    color: white;
+}
+
+.btn-blue:hover {
+    background: #1a5fe8;
+}
+
+.btn-light {
+    background: white;
+    color: #003f87;
+}
+
+.btn-light:hover {
+    background: #dfe7ff;
+}
+
+/* FEATURES */
+.features {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    background: white;
+}
+
+.feature-card {
+    background: #ffffff;
+    width: 320px;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: 0.25s;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.feature-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.feature-text {
+    font-size: 16px;
+    color: #333;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #002a61;
+    color: white;
+    margin-top: 50px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .btn { min-width: 120px; padding: 10px 16px; font-size: 15px; }
+}

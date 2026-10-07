@@ -1,0 +1,12 @@
+
+/* Form stacks */
+.stacks{ position:relative; min-height: auto; }
+.stack{ position:absolute; inset:0; opacity:0; visibility:hidden; pointer-events:none; transform: translateY(8px);
+    transition: opacity .35s ease, transform .35s ease, visibility .35s ease;
+    position: static; }
+.stack:not(.active) {
+    position: absolute;
+    inset: 0;
+}
+.stacks[data-active="signin"] #signin{ opacity:1; visibility:visible; pointer-events:auto; transform:none; position: static; }
+.stacks[data-active="signup"] #signup{ opacity:1; visibility:visible; pointer-events:auto; transform:none; position: static; }

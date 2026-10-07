@@ -1,0 +1,196 @@
+/* Occupancy Grid Styles */
+
+/* Header text needs to be visible on dark background -> use global var(--text) */
+.occupancy-header h2,
+.occupancy-header p,
+.legend-item,
+.legend-item span {
+    color: var(--text); 
+}
+
+/* The table container is explicitly white as per user preference */
+.occupancy-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+    background: #ffffff; 
+    color: #212529; /* Dark text for inside the white table */
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 1px;
+}
+
+.occupancy-table {
+    border-collapse: collapse;
+    width: max-content;
+    min-width: 100%;
+    font-size: 0.85rem;
+    table-layout: fixed;
+    color: #212529; /* Ensure table text is dark */
+}
+
+.occupancy-table th,
+.occupancy-table td {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 8px 4px;
+    min-width: 60px;
+}
+
+/* REMOVED :root override to protect global theme */
+
+.occupancy-table thead tr:first-child th {
+    background: #e9ecef;
+    color: #212529; /* Dark text on light gray header */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-bottom: 2px solid #ccc;
+}
+
+.occupancy-table thead tr:last-child th {
+    background: #f1f3f5;
+    color: #495057;
+    font-size: 0.75rem;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+.occupancy-table .time-col {
+    width: 120px;
+    background: #e9ecef;
+    color: #212529; /* Dark text on light gray col */
+    font-weight: 600;
+    position: sticky;
+    left: 0;
+    z-index: 10;
+    border-right: 2px solid #ccc;
+}
+
+.occupancy-cell {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 40px;
+    position: relative;
+    background-color: #fff;
+}
+
+.occupancy-cell:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.occupancy-cell.selected {
+    outline: 2px solid #007bff;
+    z-index: 5;
+}
+
+/* Faculty Colors */
+
+/* FIT = tirkizna */
+.faculty-fit {
+    background-color: #00CED1 !important; 
+    color: #000;
+}
+
+/* FEB = crvena */
+.faculty-feb {
+    background-color: #FF4444 !important;
+    color: #fff;
+}
+
+/* MTS = narandžasta */
+.faculty-mts {
+    background-color: #FF8C00 !important;
+    color: #fff;
+}
+
+/* PF = plava */
+.faculty-pf {
+    background-color: #1E90FF !important;
+    color: #fff;
+}
+
+/* FSJ = roza */
+.faculty-fsj {
+    background-color: #FF69B4 !important; /* HotPink */
+    color: #fff;
+}
+
+/* FVU = zelena */
+.faculty-fvu {
+    background-color: #32CD32 !important; /* LimeGreen */
+    color: #fff;
+}
+
+/* Legend Styles */
+.legend-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    margin-right: 6px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.cell-info {
+    font-size: 0.75rem;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+/* Modal Styling if not covered by base css */
+.occupancy-modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.occupancy-modal-content {
+    background-color: var(--panel, #111827);
+    color: var(--text, #e5e7eb);
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.occupancy-modal-content h3 {
+    margin-top: 0;
+    color: var(--text, #e5e7eb);
+}
+
+/* Ensure form controls in modal look decent on dark bg */
+.occupancy-modal-content select,
+.occupancy-modal-content input {
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--text, #e5e7eb);
+    padding: 8px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.occupancy-modal-content option {
+    background-color: var(--panel, #111827);
+}

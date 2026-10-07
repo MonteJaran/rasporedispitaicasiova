@@ -1,0 +1,83 @@
+/* Fields */
+.field{ margin-bottom: 14px; }
+label{ font-size: 13px; color: var(--muted); margin-bottom:6px }
+input[type="text"], input[type="email"], input[type="password"]{
+    width:100%; padding: 12px 14px; border-radius: 12px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.10);
+    color: var(--text); outline: none;
+    box-sizing: border-box;
+}
+input:focus{ border-color: var(--accent); box-shadow: var(--focus-ring); }
+
+.pwd-wrap{ position: relative; }
+.pwd-wrap input[type="password"] { padding-right: 44px; }
+.toggle-eye{ position:absolute; top:45px; right:4px; transform: translateY(-50%);
+    background: transparent; border:0; color: var(--muted); cursor: pointer;
+    padding: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;}
+.toggle-eye:focus{ outline:none; box-shadow: var(--focus-ring); }
+
+.meter{ height:8px; border-radius: 999px; background: rgba(255,255,255,.08); overflow:hidden; margin-top:8px }
+.meter > i{ /* width controlled from JS */ height:100%; width:0%; background: linear-gradient(90deg, #ef4444, #f59e0b, #22c55e); display:block; transition: width .25s ease }
+
+.error{ font-size: 12px; color: #fff; margin-top:6px }
+/* Server-side error messages inside forms */
+.server-error{
+    color: #e53935; /* vivid red */
+    font-size: 12px; /* small */
+    margin-top: 6px;
+    font-weight: 500; /* less bold */
+    line-height: 1.2;
+}
+
+.card .server-error, .stacks .server-error, .server-error {
+    color: #e53935 !important; /* vivid red */
+    font-size: 12px !important; /* small */
+    margin-top: 6px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+    display: block;
+}
+
+.card .success-server, .stacks .success-server, .success-server {
+    color: #16a34a !important; /* green */
+    font-size: 12px !important;
+    margin-top: 6px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+    display: block;
+}
+
+.help, .hint{ font-size: 12px; color: var(--muted); margin-top:6px }
+
+.actions{ margin-top: 18px; display: flex; gap: 12px; }
+.btn{ border:0; cursor:pointer; padding: 12px 16px; border-radius: 12px;
+    font-weight: 800; letter-spacing:.4px;
+    background: linear-gradient(180deg, rgba(59,130,246,.95), rgba(59,130,246,.80));
+    color: white; flex: 1; transition: all 0.2s ease; }
+.btn:hover{ transform: translateY(-1px); box-shadow: 0 4px 12px rgba(59,130,246,.3); }
+.btn:active{ transform: translateY(0); }
+.btn.secondary{ background: rgba(255,255,255,.06); color: var(--text); border: 1px solid rgba(255,255,255,.10) }
+.btn.secondary:hover{ background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.15); }
+
+.header-section{ position: relative; margin-bottom: 12px; }
+.top-register{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+.top-register:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(255,255,255,.1);
+}

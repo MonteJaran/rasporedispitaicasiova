@@ -1,0 +1,14 @@
+{
+    "name": "projekat/drs",
+    "description": "Kreiranje rasporeda ispita i casova",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Aleksa Bojovic",
+            "email": "aleksabojovic1b@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^7.0"
+    }
+}
